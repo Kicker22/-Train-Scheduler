@@ -1,3 +1,27 @@
-.jumbotron{
-    border-bottom: 1px solid black;
+body{
+    background:lavender;
 }
+
+.jumbotron{
+    background-image: url("../../assets/images/Railroad-Background-40-1920x1080.jpg");
+    background-position: center;
+    background-repeat: none;
+    border-bottom: 1px solid black;
+    color: white;
+}
+
+.table{
+    border: 1px solid black;
+    background: white;
+}
+
+.form-container header{
+    color: white;
+}
+
+.form-container{
+    border: 1px solid black;
+    padding: 0;
+    background: white;
+}
+

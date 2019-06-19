@@ -17,11 +17,11 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3 text text-center">Title goes here</h1>
+            <h1 class="display-3 text text-center">All Aboard!</h1>
         </div>
     </div>
 
-    <table class="table text-center table-hover">
+    <table class="table text-center table-hover container">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Train Name</th>
@@ -55,6 +55,40 @@
             </tr>
         </tbody>
     </table>
+
+ 
+    <form class="container form-container">
+        <header class="bg-dark py-3 text-center">Add a train</header>
+        <div class="container">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Train Name</label>
+                <input type="text" class="form-control" id="train-text" aria-describedby="trainText" placeholder="Enter Train Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Destination</label>
+                <input type="text" class="form-control" id="destinationText" placeholder="Enter Destination">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">First Train Time (HH:mm-military time)</label>
+                <input type="text" class="form-control" id="trainTime" placeholder="Enter Time (15:30)">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Frequency (min)</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary mb-1">Submit</button>
+        </div>
+    </form>
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
