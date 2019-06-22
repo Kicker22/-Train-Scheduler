@@ -10,18 +10,34 @@ var firebaseConfig = {
 
 
 firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 
-// inital variables
-var trainName = $('#');
-var destination = '';
-var frequency = 0;
-var nextArival = '';
-var minutes = 0;
 
-$(".submit-button").on('click', function (event) {
-    event.preventDefault()
-    td.text("random text")
-    tableRow.append(td)
-    $('tbody').prepend(tableRow)
+database.ref().orderByChild('name').on("child_added", function (data) {
+    // Use ` not ""
+    $("#trains").append(`<tr>
+      <td scope="row">${data.val().name}</td>
+      <td>${data.val().destination}</td>
+      <td>${data.val().trainTime}</td>
+      <td>${data.val().frequency}</td>
+      <td>${data.val().min}</td>
+    </tr>`)
+});
 
-})
+$(".submit-button").on("click", function (event) {
+    event.preventDefault();
+    var name = $("#train-text").val();
+    var destination = $("#destination-text").val();
+    var trainTime = $("#train-time").val();
+    var frequency = $("#frequency").val();
+    var min = $("#min").val();
+    database.ref().push({
+        name: name,
+        destination: destination,
+        trainTime: trainTime,
+        frequency: frequency,
+        min: min
+    });
+});
+
+

@@ -17,8 +17,8 @@
 
 <body>
     <!-- link to firebase -->
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
     
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -37,13 +37,6 @@
             </tr>
         </thead>
         <tbody id="trains">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><td>
-                <td></td>
-            </tr>
       
         </tbody>
     </table>
@@ -62,11 +55,15 @@
             </div>
             <div class="form-group">
                 <label for="input">First Train Time (HH:mm-military time)</label>
-                <input type="text" class="form-control" id="trainTime" placeholder="Enter Time (15:30)">
+                <input type="text" class="form-control" id="train-time" placeholder="Enter Time (15:30)">
             </div>
             <div class="form-group">
                 <label for="input">Frequency (min)</label>
                 <input type="text" class="form-control" id="frequency" placeholder="Frequency">
+            </div>
+            <div class="form-group">
+                <label for="input">Minuets Away<label>
+                <input type="text" class="form-control" id="min" placeholder="Frequency">
             </div>
             <button type="submit" class="submit-button btn btn-primary mb-1">Submit</button>
         </div>
