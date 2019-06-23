@@ -12,13 +12,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- link to external css-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">  
 </head>
 
 <body>
     <!-- link to firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
+     <!-- moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
     
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -31,9 +34,10 @@
             <tr>
                 <th scope="col">Train Name</th>
                 <th scope="col">Destination</th>
-                <th scope="col">Frequency(min)</th>
-                <th scope="col">Next Arrival</th>
-                <th scope="col">Minutes</th>
+                <th scope="col">Train Start</th>
+                <th scope="col">Frequency</th>
+                <th scope="col">Next Arival</th>
+                <th scope="col">Time Remaining(min)</th>
             </tr>
         </thead>
         <tbody id="trains">
@@ -54,16 +58,12 @@
                 <input type="text" class="form-control" id="destination-text" placeholder="Enter Destination">
             </div>
             <div class="form-group">
-                <label for="input">First Train Time (HH:mm-military time)</label>
-                <input type="text" class="form-control" id="train-time" placeholder="Enter Time (15:30)">
+                <label for="input">Train Schedule start (HH:mm-military time)</label>
+                <input type="text" class="form-control" id="train-time" placeholder="example(15:00)">
             </div>
             <div class="form-group">
                 <label for="input">Frequency (min)</label>
-                <input type="text" class="form-control" id="frequency" placeholder="Frequency">
-            </div>
-            <div class="form-group">
-                <label for="input">Minuets Away<label>
-                <input type="text" class="form-control" id="min" placeholder="Frequency">
+                <input type="text" class="form-control" id="frequency" placeholder="(min)">
             </div>
             <button type="submit" class="submit-button btn btn-primary mb-1">Submit</button>
         </div>
@@ -83,6 +83,7 @@
 
     <!-- external javascript -->
     <script src="./assets/javascript/moment.js"></script>
+    
     <!-- bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
