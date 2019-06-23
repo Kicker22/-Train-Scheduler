@@ -41,7 +41,7 @@ database.ref().orderByChild('name').on("child_added", function (data) {
     var tName = data.val().name;
     var tDestination = data.val().destination;
     var tFrequency = data.val().frequency;
-    var FirstTrain = parseInt(data.val().trainTime);
+    var FirstTrain =(data.val().trainTime);
     
 
     console.log(tName)
@@ -49,13 +49,13 @@ database.ref().orderByChild('name').on("child_added", function (data) {
     console.log(tFrequency)
     console.log(FirstTrain)
 
-    var cTime = moment().format("HH:mm");
+    var cTime = FirstTrain
   
 
     var tempArr = cTime.split(":")
     var time = moment()
         .hours(tempArr[0])
-        .minutes([1])
+        .minutes(tempArr[1])
     var maxMoment = moment.max(moment(), time)
     console.log(maxMoment)
 
