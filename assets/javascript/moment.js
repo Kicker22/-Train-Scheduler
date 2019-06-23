@@ -36,12 +36,12 @@ $(".submit-button").on("click", function (event) {
 
 });
 
-database.ref().orderByChild('name').on("child_added", function (data) {
+database.ref().on("child_added", function (data) {
 
     var tName = data.val().name;
     var tDestination = data.val().destination;
     var tFrequency = data.val().frequency;
-    var FirstTrain =(data.val().trainTime);
+    var FirstTrain =data.val().trainTime;
     
 
     console.log(tName)
@@ -57,7 +57,6 @@ database.ref().orderByChild('name').on("child_added", function (data) {
         .hours(tempArr[0])
         .minutes(tempArr[1])
     var maxMoment = moment.max(moment(), time)
-    console.log(maxMoment)
 
     var tMinutes;
     var tArrival;
@@ -92,8 +91,16 @@ database.ref().orderByChild('name').on("child_added", function (data) {
     </tr>`)
   
 });
-    
 
+database.ref().on("value", function (snapshot){
+$("#train-text").text(snapshot.val());
+// $("#destination-text").snapshot.val();
+// $("#train-time").snapshot.val();
+// $("#frequency").snapshot.val();
+// $("#min").snapshot.val();
+
+
+})
 
 
 
