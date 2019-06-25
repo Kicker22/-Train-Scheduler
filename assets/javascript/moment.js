@@ -1,3 +1,4 @@
+// data for firebase 
 var firebaseConfig = {
     apiKey: "AIzaSyBzKC6Qbbq1WBaoRkaocPxcqXroI3vIf10",
     authDomain: "bootcamp-activity.firebaseapp.com",
@@ -8,10 +9,11 @@ var firebaseConfig = {
     appId: "1:380238233422:web:d80eda2e3b55b3f2"
 };
 
-
+// initialize firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
+// This on click function grabs the user input wnen the submit button is clicked 
 $(".submit-button").on("click", function (event) {
     event.preventDefault();
     var name = $("#train-text").val().trim();
@@ -27,7 +29,8 @@ $(".submit-button").on("click", function (event) {
 
     console.log(addedTrain)
     database.ref().push(addedTrain)
-
+    
+    // This code emptys text inputs after submit
     $("#train-text").val('');
     $("#destination-text").val('');
     $("#train-time").val('');
@@ -36,6 +39,7 @@ $(".submit-button").on("click", function (event) {
 
 });
 
+// this .on updates the dom when child is added 
 database.ref().on("child_added", function (data) {
 
     var tName = data.val().name;
@@ -51,13 +55,13 @@ database.ref().on("child_added", function (data) {
 
     var cTime = FirstTrain
   
-
     var tempArr = cTime.split(":")
     var time = moment()
         .hours(tempArr[0])
         .minutes(tempArr[1])
     var maxMoment = moment.max(moment(), time)
 
+    // this if/else statment converts the time to 12hr and then tells you minutes remaining 
     var tMinutes;
     var tArrival;
     if(maxMoment === time){
@@ -79,7 +83,7 @@ database.ref().on("child_added", function (data) {
     console.log("tArrival:", tArrival);
   
   
-
+    // this appends table content to the dom when user submits
     $("#trains").append(`<tr>
       <td scope="row">${data.val().name}</td>
       <td>${data.val().destination}</td>

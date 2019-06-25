@@ -1,13 +1,23 @@
 body{
-    background:lavender;
+    background:peachpuff;
+    background-image: url(../../assets/images/leaves-pattern.png);
+    /* background-size: contain; */
+
 }
 
 .jumbotron{
     background-image: url("../../assets/images/Railroad-Background-40-1920x1080.jpg");
+    /* background: peachpuff; */
     background-position: center;
     background-repeat: none;
     border-bottom: 1px solid black;
     color: white;
+}
+
+.page-header{
+    background: rgb(0, 0, 0, 0.6);
+    width: 50%;
+    margin: 0 auto;
 }
 
 .table{
